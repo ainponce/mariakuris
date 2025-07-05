@@ -383,6 +383,99 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Timeline Section */}
+        <section className="py-20 lg:py-32 bg-gradient-to-br from-[rgb(var(--theme-gradient-to))] via-[rgb(var(--theme-bg))] to-[rgb(var(--theme-gradient-to))] relative overflow-hidden border-t border-[#003366]/20">
+          {/* Background */}
+          <div className="absolute inset-0 opacity-5">
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#003366]/20 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#003366]/20 rounded-full blur-3xl"></div>
+          </div>
+
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="text-center mb-16 scroll-reveal">
+              <div className="inline-flex items-center space-x-2 bg-[#003366]/10 border border-[#003366]/20 rounded-full px-4 py-2 mb-6">
+                <Award className="h-4 w-4 text-[#003366]" />
+                <span className="text-[#003366] text-sm font-medium">Trayectoria Profesional</span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[rgb(var(--theme-fg))] mb-6">
+                <span className="text-gradient">Trayectoria de Excelencia</span>
+              </h2>
+              <p className="text-xl text-[rgb(var(--theme-text))] max-w-3xl mx-auto leading-relaxed">
+                Más de 15 años construyendo un legado de éxito en derecho corporativo
+              </p>
+            </div>
+
+            <div className="max-w-4xl mx-auto">
+              {/* Timeline */}
+              <div className="relative">
+                {/* Central Line */}
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-[#003366] via-[#003366]/50 to-[#003366]"></div>
+
+                {[
+                  {
+                    year: "2024",
+                    title: "Líder en M&A Corporativo",
+                    description: "Reconocida como una de las mejores abogadas corporativas del país. Más de €2.5B en transacciones exitosas.",
+                    position: "right"
+                  },
+                  {
+                    year: "2020",
+                    title: "Socia Fundadora",
+                    description: "Establecimiento de práctica independiente especializada en derecho corporativo de alta complejidad.",
+                    position: "left"
+                  },
+                  {
+                    year: "2015",
+                    title: "Socia Senior - Firma Internacional",
+                    description: "Liderazgo del departamento de M&A en prestigioso bufete internacional. Casos de alta visibilidad.",
+                    position: "right"
+                  },
+                  {
+                    year: "2010",
+                    title: "LLM Corporate Law - Universidad Austral",
+                    description: "Especialización avanzada en derecho corporativo con mención de honor. Beca de excelencia académica.",
+                    position: "left"
+                  },
+                  {
+                    year: "2009",
+                    title: "Abogada - Universidad de Buenos Aires",
+                    description: "Graduación con honores. Promedio distinguido. Inicio de carrera en derecho corporativo.",
+                    position: "right"
+                  }
+                ].map((milestone, index) => (
+                  <div key={index} className={`relative flex items-center mb-12 scroll-reveal-${milestone.position}`}>
+                    {milestone.position === "left" ? (
+                      <>
+                        <div className="w-1/2 pr-8 text-right">
+                          <div className="corporate-card p-6 card-hover">
+                            <div className="text-[#003366] font-bold text-lg mb-2">{milestone.year}</div>
+                            <h3 className="text-xl font-bold text-[rgb(var(--theme-fg))] mb-3">{milestone.title}</h3>
+                            <p className="text-[rgb(var(--theme-text))] leading-relaxed">{milestone.description}</p>
+                          </div>
+                        </div>
+                        <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-[#003366] rounded-full border-4 border-white shadow-lg"></div>
+                        <div className="w-1/2 pl-8"></div>
+                      </>
+                    ) : (
+                      <>
+                        <div className="w-1/2 pr-8"></div>
+                        <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-[#003366] rounded-full border-4 border-white shadow-lg"></div>
+                        <div className="w-1/2 pl-8">
+                          <div className="corporate-card p-6 card-hover">
+                            <div className="text-[#003366] font-bold text-lg mb-2">{milestone.year}</div>
+                            <h3 className="text-xl font-bold text-[rgb(var(--theme-fg))] mb-3">{milestone.title}</h3>
+                            <p className="text-[rgb(var(--theme-text))] leading-relaxed">{milestone.description}</p>
+                          </div>
+                        </div>
+                      </>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Contact Section */}
         <section
           id="contacto"

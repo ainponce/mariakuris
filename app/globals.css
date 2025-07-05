@@ -130,7 +130,16 @@
   }
 }
 
+/* Custom duration classes for page transitions */
+@layer utilities {
+  .duration-4000 {
+    transition-duration: 4000ms;
+  }
 
+  .duration-5000 {
+    transition-duration: 5000ms;
+  }
+}
 
 /* Enhanced Animations */
 @keyframes fadeOut {

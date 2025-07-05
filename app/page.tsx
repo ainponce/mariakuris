@@ -395,13 +395,13 @@ export default function Home() {
             <div className="text-center mb-16 scroll-reveal">
               <div className="inline-flex items-center space-x-2 bg-[#003366]/10 border border-[#003366]/20 rounded-full px-4 py-2 mb-6">
                 <Award className="h-4 w-4 text-[#003366]" />
-                <span className="text-[#003366] text-sm font-medium">Trayectoria Profesional</span>
+                <span className="text-[#003366] text-sm font-medium">{t('trayectoriaProfesional')}</span>
               </div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[rgb(var(--theme-fg))] mb-6">
-                <span className="text-gradient">Trayectoria de Excelencia</span>
+                <span className="text-gradient">{t('trayectoriaExcelencia')}</span>
               </h2>
               <p className="text-xl text-[rgb(var(--theme-text))] max-w-3xl mx-auto leading-relaxed">
-                Más de 15 años construyendo un legado de éxito en derecho corporativo
+                {t('trayectoriaDescription')}
               </p>
             </div>
 
@@ -414,32 +414,32 @@ export default function Home() {
                 {[
                   {
                     year: "2024",
-                    title: "Líder en M&A Corporativo",
-                    description: "Reconocida como una de las mejores abogadas corporativas del país. Más de €2.5B en transacciones exitosas.",
+                    titleKey: "liderMA" as const,
+                    descriptionKey: "liderMADesc" as const,
                     position: "right"
                   },
                   {
                     year: "2020",
-                    title: "Socia Fundadora",
-                    description: "Establecimiento de práctica independiente especializada en derecho corporativo de alta complejidad.",
+                    titleKey: "sociaFundadora" as const,
+                    descriptionKey: "sociaFundadoraDesc" as const,
                     position: "left"
                   },
                   {
                     year: "2015",
-                    title: "Socia Senior - Firma Internacional",
-                    description: "Liderazgo del departamento de M&A en prestigioso bufete internacional. Casos de alta visibilidad.",
+                    titleKey: "sociaSenior" as const,
+                    descriptionKey: "sociaSeniorDesc" as const,
                     position: "right"
                   },
                   {
                     year: "2010",
-                    title: "LLM Corporate Law - Universidad Austral",
-                    description: "Especialización avanzada en derecho corporativo con mención de honor. Beca de excelencia académica.",
+                    titleKey: "llmCorporateLaw" as const,
+                    descriptionKey: "llmCorporateLawDesc" as const,
                     position: "left"
                   },
                   {
                     year: "2009",
-                    title: "Abogada - Universidad de Buenos Aires",
-                    description: "Graduación con honores. Promedio distinguido. Inicio de carrera en derecho corporativo.",
+                    titleKey: "abogadaUBA" as const,
+                    descriptionKey: "abogadaUBADesc" as const,
                     position: "right"
                   }
                 ].map((milestone, index) => (
@@ -449,8 +449,8 @@ export default function Home() {
                         <div className="w-1/2 pr-8 text-right">
                           <div className="corporate-card p-6 card-hover">
                             <div className="text-[#003366] font-bold text-lg mb-2">{milestone.year}</div>
-                            <h3 className="text-xl font-bold text-[rgb(var(--theme-fg))] mb-3">{milestone.title}</h3>
-                            <p className="text-[rgb(var(--theme-text))] leading-relaxed">{milestone.description}</p>
+                            <h3 className="text-xl font-bold text-[rgb(var(--theme-fg))] mb-3">{t(milestone.titleKey)}</h3>
+                            <p className="text-[rgb(var(--theme-text))] leading-relaxed">{t(milestone.descriptionKey)}</p>
                           </div>
                         </div>
                         <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-[#003366] rounded-full border-4 border-white shadow-lg"></div>
@@ -463,8 +463,8 @@ export default function Home() {
                         <div className="w-1/2 pl-8">
                           <div className="corporate-card p-6 card-hover">
                             <div className="text-[#003366] font-bold text-lg mb-2">{milestone.year}</div>
-                            <h3 className="text-xl font-bold text-[rgb(var(--theme-fg))] mb-3">{milestone.title}</h3>
-                            <p className="text-[rgb(var(--theme-text))] leading-relaxed">{milestone.description}</p>
+                            <h3 className="text-xl font-bold text-[rgb(var(--theme-fg))] mb-3">{t(milestone.titleKey)}</h3>
+                            <p className="text-[rgb(var(--theme-text))] leading-relaxed">{t(milestone.descriptionKey)}</p>
                           </div>
                         </div>
                       </>

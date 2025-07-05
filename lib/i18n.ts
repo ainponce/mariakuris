@@ -49,6 +49,20 @@ export interface Translations {
   formacion: string
   membresias: string
   
+  // Timeline
+  trayectoriaExcelencia: string
+  trayectoriaDescription: string
+  liderMA: string
+  liderMADesc: string
+  sociaFundadora: string
+  sociaFundadoraDesc: string
+  sociaSenior: string
+  sociaSeniorDesc: string
+  llmCorporateLaw: string
+  llmCorporateLawDesc: string
+  abogadaUBA: string
+  abogadaUBADesc: string
+  
   // Contact
   contactoCorporativo: string
   consultaCorpTitle: string
@@ -129,6 +143,20 @@ export const translations: Record<Language, Translations> = {
     formacion: 'Formación',
     membresias: 'Membresías',
     
+    // Timeline
+    trayectoriaExcelencia: 'Trayectoria de Excelencia',
+    trayectoriaDescription: 'Más de 15 años construyendo un legado de éxito en derecho corporativo',
+    liderMA: 'Líder en M&A Corporativo',
+    liderMADesc: 'Reconocida como una de las mejores abogadas corporativas del país. Más de €2.5B en transacciones exitosas.',
+    sociaFundadora: 'Socia Fundadora',
+    sociaFundadoraDesc: 'Establecimiento de práctica independiente especializada en derecho corporativo de alta complejidad.',
+    sociaSenior: 'Socia Senior - Firma Internacional',
+    sociaSeniorDesc: 'Liderazgo del departamento de M&A en prestigioso bufete internacional. Casos de alta visibilidad.',
+    llmCorporateLaw: 'LLM Corporate Law - Universidad Austral',
+    llmCorporateLawDesc: 'Especialización avanzada en derecho corporativo con mención de honor. Beca de excelencia académica.',
+    abogadaUBA: 'Abogada - Universidad de Buenos Aires',
+    abogadaUBADesc: 'Graduación con honores. Promedio distinguido. Inicio de carrera en derecho corporativo.',
+    
     // Contact
     contactoCorporativo: 'Contacto Corporativo',
     consultaCorpTitle: 'Consulta Corporativa',
@@ -206,6 +234,20 @@ export const translations: Record<Language, Translations> = {
     aboutDescription3: 'I have participated in some of the most important corporate transactions in the country, advising both family businesses and multinationals in their growth and expansion processes.',
     formacion: 'Education',
     membresias: 'Memberships',
+    
+    // Timeline
+    trayectoriaExcelencia: 'Track Record of Excellence',
+    trayectoriaDescription: 'Over 15 years building a legacy of success in corporate law',
+    liderMA: 'M&A Corporate Leader',
+    liderMADesc: 'Recognized as one of the best corporate lawyers in the country. Over €2.5B in successful transactions.',
+    sociaFundadora: 'Founding Partner',
+    sociaFundadoraDesc: 'Establishment of independent practice specialized in high-complexity corporate law.',
+    sociaSenior: 'Senior Partner - International Firm',
+    sociaSeniorDesc: 'Leadership of M&A department in prestigious international law firm. High-profile cases.',
+    llmCorporateLaw: 'LLM Corporate Law - Universidad Austral',
+    llmCorporateLawDesc: 'Advanced specialization in corporate law with honors. Academic excellence scholarship.',
+    abogadaUBA: 'Lawyer - Universidad de Buenos Aires',
+    abogadaUBADesc: 'Graduation with honors. Distinguished average. Beginning of career in corporate law.',
     
     // Contact
     contactoCorporativo: 'Corporate Contact',

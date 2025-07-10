@@ -175,7 +175,7 @@ export default function Home() {
               playsInline
               preload="metadata"
             >
-              <source src="/background-hero-section.mp4" type="video/mp4" />
+              <source src="https://3yfctedxuyowr5e7.public.blob.vercel-storage.com/background-hero-section-new-e1Frf8Qf9ag4wq7LdAVJSUwVfSBNGC.webm" type="video/webm" />
               {t('videoNotSupported')}
             </video>
             {/* Video Overlay for text readability */}
@@ -305,13 +305,13 @@ export default function Home() {
 
                 <div className="space-y-6 text-[rgb(var(--theme-text))] leading-relaxed">
                   <p className="text-lg">
-                    {t('aboutDescription1')}
+                    Soy una abogada especializada en derecho corporativo con más de 15 años de experiencia asesorando empresas en fusiones, adquisiciones y reestructuraciones corporativas. Mi enfoque se centra en brindar soluciones estratégicas y eficientes que agreguen valor real a mis clientes.
                   </p>
                   <p className="text-lg">
-                    {t('aboutDescription2')}
+                    A lo largo de mi carrera, he desarrollado una comprensión profunda de los desafíos comerciales que enfrentan las empresas modernas, permitiéndome ofrecer asesoramiento jurídico que va más allá de lo técnico para convertirse en una ventaja competitiva.
                   </p>
                   <p className="text-lg">
-                    {t('aboutDescription3')}
+                    Mi compromiso es acompañar a cada cliente en su crecimiento empresarial, asegurando que todas las operaciones corporativas se realicen con la máxima seguridad jurídica y eficiencia estratégica.
                   </p>
                 </div>
 
@@ -378,99 +378,6 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Timeline Section */}
-        <section className="py-20 lg:py-32 bg-gradient-to-br from-[rgb(var(--theme-gradient-to))] via-[rgb(var(--theme-bg))] to-[rgb(var(--theme-gradient-to))] relative overflow-hidden border-t border-[#003366]/20">
-          {/* Background */}
-          <div className="absolute inset-0 opacity-5">
-            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#003366]/20 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#003366]/20 rounded-full blur-3xl"></div>
-          </div>
-
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="text-center mb-16 scroll-reveal">
-              <div className="inline-flex items-center space-x-2 bg-[#003366]/10 border border-[#003366]/20 rounded-full px-4 py-2 mb-6">
-                <Award className="h-4 w-4 text-[#003366]" />
-                <span className="text-[#003366] text-sm font-medium">{t('trayectoriaProfesional')}</span>
-              </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[rgb(var(--theme-fg))] mb-6">
-                <span className="text-gradient">{t('trayectoriaExcelencia')}</span>
-              </h2>
-              <p className="text-xl text-[rgb(var(--theme-text))] max-w-3xl mx-auto leading-relaxed">
-                {t('trayectoriaDescription')}
-              </p>
-            </div>
-
-            <div className="max-w-4xl mx-auto">
-              {/* Timeline */}
-              <div className="relative">
-                {/* Central Line */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-[#003366] via-[#003366]/50 to-[#003366]"></div>
-
-                {[
-                  {
-                    year: "2024",
-                    titleKey: "liderMA" as const,
-                    descriptionKey: "liderMADesc" as const,
-                    position: "right"
-                  },
-                  {
-                    year: "2020",
-                    titleKey: "sociaFundadora" as const,
-                    descriptionKey: "sociaFundadoraDesc" as const,
-                    position: "left"
-                  },
-                  {
-                    year: "2015",
-                    titleKey: "sociaSenior" as const,
-                    descriptionKey: "sociaSeniorDesc" as const,
-                    position: "right"
-                  },
-                  {
-                    year: "2010",
-                    titleKey: "llmCorporateLaw" as const,
-                    descriptionKey: "llmCorporateLawDesc" as const,
-                    position: "left"
-                  },
-                  {
-                    year: "2009",
-                    titleKey: "abogadaUBA" as const,
-                    descriptionKey: "abogadaUBADesc" as const,
-                    position: "right"
-                  }
-                ].map((milestone, index) => (
-                  <div key={index} className={`relative flex items-center mb-12 scroll-reveal-${milestone.position}`}>
-                    {milestone.position === "left" ? (
-                      <>
-                        <div className="w-1/2 pr-8 text-right">
-                          <div className="corporate-card p-6 card-hover">
-                            <div className="text-[#003366] font-bold text-lg mb-2">{milestone.year}</div>
-                            <h3 className="text-xl font-bold text-[rgb(var(--theme-fg))] mb-3">{t(milestone.titleKey)}</h3>
-                            <p className="text-[rgb(var(--theme-text))] leading-relaxed">{t(milestone.descriptionKey)}</p>
-                          </div>
-                        </div>
-                        <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-[#003366] rounded-full border-4 border-white shadow-lg"></div>
-                        <div className="w-1/2 pl-8"></div>
-                      </>
-                    ) : (
-                      <>
-                        <div className="w-1/2 pr-8"></div>
-                        <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-[#003366] rounded-full border-4 border-white shadow-lg"></div>
-                        <div className="w-1/2 pl-8">
-                          <div className="corporate-card p-6 card-hover">
-                            <div className="text-[#003366] font-bold text-lg mb-2">{milestone.year}</div>
-                            <h3 className="text-xl font-bold text-[rgb(var(--theme-fg))] mb-3">{t(milestone.titleKey)}</h3>
-                            <p className="text-[rgb(var(--theme-text))] leading-relaxed">{t(milestone.descriptionKey)}</p>
-                          </div>
-                        </div>
-                      </>
-                    )}
-                  </div>
-                ))}
               </div>
             </div>
           </div>

@@ -43,9 +43,15 @@ export interface Translations {
   // About
   trayectoriaProfesional: string
   sobreMaria: string
-  aboutDescription1: string
-  aboutDescription2: string
-  aboutDescription3: string
+  // About sections
+  legadoExcelencia: string
+  legadoExcelenciaDesc: string
+  mentoriaUnica: string
+  mentoriaUnicaDesc: string
+  expertiseEspecializada: string
+  expertiseEspecializadaDesc: string
+  visionEstrategica: string
+  visionEstrategicaDesc: string
   formacion: string
   membresias: string
   
@@ -136,10 +142,16 @@ export const translations: Record<Language, Translations> = {
     
     // About
     trayectoriaProfesional: 'Trayectoria Profesional',
-    sobreMaria: 'Sobre María Kuris',
-    aboutDescription1: 'Soy una abogada especializada en derecho corporativo con más de 15 años de experiencia asesorando empresas nacionales e internacionales en sus operaciones más complejas y estratégicas.',
-    aboutDescription2: 'Mi práctica se enfoca en brindar soluciones jurídicas integrales para el mundo empresarial, desde la constitución de sociedades hasta transacciones de M&A, siempre con un enfoque personalizado y orientado a resultados.',
-    aboutDescription3: 'He participado en algunas de las transacciones corporativas más importantes del país, asesorando tanto a empresas familiares como a multinacionales en sus procesos de crecimiento y expansión.',
+    sobreMaria: 'Estrategia Legal con Visión y Legado',
+    // About sections
+    legadoExcelencia: 'Un Legado de Excelencia',
+    legadoExcelenciaDesc: 'Mi ejercicio profesional se distingue por una base sólida, una visión estratégica y un compromiso inquebrantable con la resolución efectiva de conflictos legales.',
+    mentoriaUnica: 'Mentoría Única y Excepcional',
+    mentoriaUnicaDesc: 'Tuve el privilegio de ser la única discípula del Dr. Jorge Daniel Andreu (Tomo 6 Folio 432 CPACF), eminente abogado con 50+ años de trayectoria que me transmitió su vasto conocimiento legal.',
+    expertiseEspecializada: 'Expertise Especializada',
+    expertiseEspecializadaDesc: 'Egresada de la Universidad Nacional de La Matanza con promedio 7.68. Especializada en Derecho del Consumidor y Laboral Empresarial con 10 años asesorando concesionarias de alta demanda.',
+    visionEstrategica: 'Visión Estratégica del Conflicto',
+    visionEstrategicaDesc: 'Mi fortaleza distintiva: análisis integral del litigio, evaluando cada aspecto e interés para trazar la estrategia más favorable, desde negociaciones hasta preparación judicial meticulosa.',
     formacion: 'Formación',
     membresias: 'Membresías',
     
@@ -228,10 +240,16 @@ export const translations: Record<Language, Translations> = {
     
     // About
     trayectoriaProfesional: 'Professional Career',
-    sobreMaria: 'About María Kuris',
-    aboutDescription1: 'I am a lawyer specialized in corporate law with over 15 years of experience advising national and international companies in their most complex and strategic operations.',
-    aboutDescription2: 'My practice focuses on providing comprehensive legal solutions for the business world, from the incorporation of companies to M&A transactions, always with a personalized and results-oriented approach.',
-    aboutDescription3: 'I have participated in some of the most important corporate transactions in the country, advising both family businesses and multinationals in their growth and expansion processes.',
+    sobreMaria: 'Legal Strategy with Vision and Legacy',
+    // About sections
+    legadoExcelencia: 'A Legacy of Excellence',
+    legadoExcelenciaDesc: 'My professional practice is distinguished by a solid foundation, strategic vision, and unwavering commitment to effective legal conflict resolution.',
+    mentoriaUnica: 'Unique and Exceptional Mentorship',
+    mentoriaUnicaDesc: 'I had the privilege of being the sole disciple of Dr. Jorge Daniel Andreu (Volume 6 Folio 432 CPACF), an eminent lawyer with 50+ years of experience who transmitted his vast legal knowledge to me.',
+    expertiseEspecializada: 'Specialized Expertise',
+    expertiseEspecializadaDesc: 'Graduate of Universidad Nacional de La Matanza with 7.68 average. Specialized in Consumer Law and Corporate Labor Law with 10 years advising high-demand dealerships.',
+    visionEstrategica: 'Strategic Vision of Conflict',
+    visionEstrategicaDesc: 'My distinctive strength: comprehensive litigation analysis, evaluating every aspect and interest to chart the most favorable strategy, from negotiations to meticulous judicial preparation.',
     formacion: 'Education',
     membresias: 'Memberships',
     

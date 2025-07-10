@@ -55,6 +55,18 @@ export interface Translations {
   formacion: string
   membresias: string
   
+  // New About section content
+  aboutIntroduction: string
+  legacyAndMentorshipTitle: string
+  legacyAndMentorshipDesc: string
+  legacyAndMentorshipDesc2: string
+  expertiseTitle: string
+  expertiseDesc: string
+  expertiseDesc2: string
+  strategicVisionTitle: string
+  strategicVisionDesc: string
+  strategicVisionDesc2: string
+  
   // Timeline
   trayectoriaExcelencia: string
   trayectoriaDescription: string
@@ -155,6 +167,18 @@ export const translations: Record<Language, Translations> = {
     formacion: 'Formación',
     membresias: 'Membresías',
     
+    // New About section content
+    aboutIntroduction: 'Mi ejercicio profesional se distingue por una base sólida, una visión estratégica y un compromiso inquebrantable con la resolución efectiva de conflictos legales. Si bien mi antigüedad en la matrícula profesional no lo refleja, mi inmersión y formación en el Derecho comenzaron mucho antes, forjadas bajo la tutela de una figura fundamental en el ámbito del derecho laboral.',
+    legacyAndMentorshipTitle: 'Un Legado de Excelencia y una Mentoría Única',
+    legacyAndMentorshipDesc: 'Tuve el inmenso privilegio de ser la única discípula del Dr. Jorge Daniel Andreu, quien fuera Tomo 6 Folio 432 de la matrícula del CPACF, un eminente abogado que marcó una era en el Derecho argentino. Con sus más de 50 años de trayectoria profesional, mi mentor me brindó una formación invaluable, confiándome su vasto saber y transmitiéndome la esencia de la práctica legal con una generosidad sin igual.',
+    legacyAndMentorshipDesc2: 'Junto a esta figura de referencia, cultivamos una sinergia perfecta: su profunda experiencia en el Derecho se fusionó con mi impronta innovadora y mi visión estratégica para la resolución de conflictos. Ambos compartíamos una pasión sin igual por el derecho laboral empresarial y, con mi estilo conciliador, formamos un equipo cohesionado y eficaz. Hoy, en honor a su memoria y legado, asumo con gran orgullo y entusiasmo la responsabilidad de continuar este camino, desplegando todo el conocimiento adquirido para el beneficio de mis clientes.',
+    expertiseTitle: 'Expertise en Derecho del Consumidor y Laboral Empresarial',
+    expertiseDesc: 'Soy egresada de la prestigiosa Universidad Nacional de La Matanza, donde obtuve mi título de abogada con un excelente promedio de 7.68. Esta sólida base académica, sumada a la experiencia práctica y la formación recibida, me ha dotado de una habilidad excepcional para manejar litigios complejos.',
+    expertiseDesc2: 'Mi especialización y pasión se centran en el Derecho del Consumidor y el Derecho Laboral Empresarial. En particular, cuento con casi 10 años de experiencia asesorando y asistiendo a concesionarias de alta demanda. Este bagaje me permite comprender a fondo los desafíos que enfrentan empresas con alta litigiosidad, ya sea por la venta de productos o la prestación de servicios masivos. Mi profundo dominio en estas áreas me permite ofrecer un servicio de gran valor estratégico para proteger los intereses de su compañía.',
+    strategicVisionTitle: 'Mi Talento Distintivo: La Visión Estratégica del Conflicto',
+    strategicVisionDesc: 'Mi mayor fortaleza radica en mi capacidad para analizar y resolver conflictos. Me caracterizo por una visión integral del litigio, desmenuzando cada aspecto, posición e interés de las partes involucradas. Este análisis profundo me permite trazar la estrategia más favorable para mi cliente.',
+    strategicVisionDesc2: 'Ya sea que se trate de negociar acuerdos que minimicen riesgos y costos, o de preparar meticulosamente la batalla judicial cuando la instancia conciliatoria no representa la vía más beneficiosa para mis representados. Mi objetivo es claro: brindar soluciones efectivas y un acompañamiento profesional de primer nivel que garantice la defensa integral de tus intereses empresariales.',
+    
     // Timeline
     trayectoriaExcelencia: 'Trayectoria de Excelencia',
     trayectoriaDescription: 'Más de 15 años construyendo un legado de éxito en derecho corporativo',
@@ -252,6 +276,18 @@ export const translations: Record<Language, Translations> = {
     visionEstrategicaDesc: 'My distinctive strength: comprehensive litigation analysis, evaluating every aspect and interest to chart the most favorable strategy, from negotiations to meticulous judicial preparation.',
     formacion: 'Education',
     membresias: 'Memberships',
+    
+    // New About section content
+    aboutIntroduction: 'My professional practice is distinguished by a solid foundation, strategic vision, and unwavering commitment to effective legal conflict resolution. While my seniority in the professional registry may not reflect it, my immersion and training in Law began much earlier, forged under the tutelage of a fundamental figure in the field of labor law.',
+    legacyAndMentorshipTitle: 'A Legacy of Excellence and Unique Mentorship',
+    legacyAndMentorshipDesc: 'I had the immense privilege of being the sole disciple of Dr. Jorge Daniel Andreu, who was Volume 6 Folio 432 of the CPACF registry, an eminent lawyer who marked an era in Argentine Law. With his more than 50 years of professional career, my mentor provided me with invaluable training, entrusting me with his vast knowledge and transmitting the essence of legal practice with unparalleled generosity.',
+    legacyAndMentorshipDesc2: 'Together with this reference figure, we cultivated perfect synergy: his profound experience in Law merged with my innovative imprint and strategic vision for conflict resolution. We both shared an unparalleled passion for corporate labor law and, with my conciliatory style, we formed a cohesive and effective team. Today, in honor of his memory and legacy, I proudly and enthusiastically assume the responsibility of continuing this path, deploying all the knowledge acquired for the benefit of my clients.',
+    expertiseTitle: 'Expertise in Consumer Law and Corporate Labor Law',
+    expertiseDesc: 'I am a graduate of the prestigious Universidad Nacional de La Matanza, where I obtained my law degree with an excellent average of 7.68. This solid academic foundation, combined with practical experience and the training received, has endowed me with exceptional ability to handle complex litigation.',
+    expertiseDesc2: 'My specialization and passion focus on Consumer Law and Corporate Labor Law. In particular, I have almost 10 years of experience advising and assisting high-demand dealerships. This background allows me to thoroughly understand the challenges faced by companies with high litigation, whether from product sales or mass service provision. My deep mastery in these areas allows me to offer a service of great strategic value to protect your company\'s interests.',
+    strategicVisionTitle: 'My Distinctive Talent: Strategic Vision of Conflict',
+    strategicVisionDesc: 'My greatest strength lies in my ability to analyze and resolve conflicts. I am characterized by a comprehensive vision of litigation, breaking down every aspect, position, and interest of the parties involved. This deep analysis allows me to chart the most favorable strategy for my client.',
+    strategicVisionDesc2: 'Whether it involves negotiating agreements that minimize risks and costs, or meticulously preparing for judicial battle when conciliatory proceedings do not represent the most beneficial path for my clients. My objective is clear: to provide effective solutions and first-class professional support that guarantees comprehensive defense of your business interests.',
     
     // Timeline
     trayectoriaExcelencia: 'Track Record of Excellence',

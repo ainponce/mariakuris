@@ -292,91 +292,109 @@ export default function Home() {
           <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#003366]/5 rounded-full blur-3xl"></div>
 
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-              <div className="scroll-reveal-left">
-                <div className="inline-flex items-center space-x-2 bg-[#003366]/10 border border-[#003366]/20 rounded-full px-4 py-2 mb-6">
-                  <Award className="h-4 w-4 text-[#003366]" />
-                  <span className="text-[#003366] text-sm font-medium">{t('trayectoriaProfesional')}</span>
-                </div>
+            {/* Header */}
+            <div className="text-center mb-16 scroll-reveal max-w-6xl mx-auto">
+              <div className="inline-flex items-center space-x-2 bg-[#003366]/10 border border-[#003366]/20 rounded-full px-4 py-2 mb-6">
+                <Award className="h-4 w-4 text-[#003366]" />
+                <span className="text-[#003366] text-sm font-medium">{t('trayectoriaProfesional')}</span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[rgb(var(--theme-fg))] mb-6">
+                {t('sobreMaria')} <span className="text-gradient"></span>
+              </h2>
+            </div>
 
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[rgb(var(--theme-fg))] mb-6 scroll-reveal stagger-2">
-                  {t('sobreMaria')} <span className="text-gradient"></span>
-                </h2>
-
-                <div className="space-y-6 text-[rgb(var(--theme-text))] leading-relaxed">
-                  <p className="text-lg">
-                    Soy una abogada especializada en derecho corporativo con más de 15 años de experiencia asesorando empresas en fusiones, adquisiciones y reestructuraciones corporativas. Mi enfoque se centra en brindar soluciones estratégicas y eficientes que agreguen valor real a mis clientes.
-                  </p>
-                  <p className="text-lg">
-                    A lo largo de mi carrera, he desarrollado una comprensión profunda de los desafíos comerciales que enfrentan las empresas modernas, permitiéndome ofrecer asesoramiento jurídico que va más allá de lo técnico para convertirse en una ventaja competitiva.
-                  </p>
-                  <p className="text-lg">
-                    Mi compromiso es acompañar a cada cliente en su crecimiento empresarial, asegurando que todas las operaciones corporativas se realicen con la máxima seguridad jurídica y eficiencia estratégica.
-                  </p>
-                </div>
-
-                <div className="grid sm:grid-cols-2 gap-6 mt-12">
-                  {[
-                    { icon: BookOpen, titleKey: "formacion" as const, subtitle: "Universidad de Buenos Aires - LLM Corporate Law" },
-                    { icon: Award, titleKey: "experiencia" as const, subtitle: "15+ años en derecho corporativo" },
-                    { icon: Building2, titleKey: "casosCorporativos" as const, subtitle: "500+ operaciones corporativas" },
-                    { icon: Scale, titleKey: "especializacionCorporativa" as const, subtitle: "M&A y Derecho Societario" },
-                  ].map((item, index) => (
-                    <div
-                      key={index}
-                      className="flex items-center space-x-4 p-4 corporate-card rounded-xl transition-all duration-500 group"
-                    >
-                      <div className="w-12 h-12 bg-[#003366]/20 rounded-full flex items-center justify-center group-hover:bg-[#003366]/30 transition-colors duration-300">
-                        <item.icon className="h-6 w-6 text-[#003366]" />
+            {/* Card de Maria Kuris */}
+            <div className="flex justify-center mb-20 scroll-reveal">
+              <div className="w-full max-w-4xl">
+                <div className="relative corporate-card rounded-2xl overflow-hidden shadow-2xl card-hover">
+                  <div className="grid md:grid-cols-2 gap-0">
+                    {/* Sección de imagen */}
+                    <div className="relative">
+                      <div className="aspect-[4/3] md:aspect-[3/4] w-full overflow-hidden bg-gradient-to-br from-[#003366]/5 to-[#003366]/10">
+                        <img
+                          src="https://3yfctedxuyowr5e7.public.blob.vercel-storage.com/profile.png"
+                          alt="Maria Kuris - Abogada Corporativa"
+                          className="w-full h-full object-cover object-top md:object-top"
+                        />
+                        {/* Overlay suave con gradiente hacia la derecha en desktop */}
+                        <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-[#003366]/20 via-transparent to-transparent"></div>
+                        {/* Overlay adicional para la transición suave en desktop */}
+                        <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[rgb(var(--theme-bg))]/20"></div>
                       </div>
-                      <div>
-                        <h3 className="font-semibold text-[rgb(var(--theme-fg))] group-hover:text-[#003366] transition-colors duration-300">
-                          {t(item.titleKey)}
-                        </h3>
-                        <p className="text-sm text-[rgb(var(--theme-text))]">{item.subtitle}</p>
+
+                      {/* Información superpuesta en la imagen (solo mobile) */}
+                      <div className="absolute bottom-4 left-4 right-4 md:hidden">
+                        <div className="bg-white/90 backdrop-blur-sm rounded-xl p-3 shadow-lg">
+                          <h3 className="text-lg font-bold text-[#003366] mb-1">Maria Kuris</h3>
+                          <p className="text-sm text-[#003366]/80 font-medium">{t('lawyer')}</p>
+                        </div>
                       </div>
                     </div>
-                  ))}
+
+                    {/* Sección de texto */}
+                    <div className="relative p-6 sm:p-8 md:p-10 flex flex-col justify-center">
+                      {/* Gradiente suave en el borde izquierdo (solo desktop) */}
+                      <div className="hidden md:block absolute left-0 top-0 w-8 h-full bg-gradient-to-r from-[rgb(var(--theme-bg))]/40 to-transparent"></div>
+
+                      {/* Información de header (desktop/tablet) */}
+                      <div className="hidden md:block mb-6 relative z-10">
+                        <h3 className="text-2xl lg:text-3xl font-bold text-[rgb(var(--theme-fg))] mb-2">Maria Kuris</h3>
+                        <p className="text-[#003366] font-medium text-lg">{t('lawyer')}</p>
+                      </div>
+
+                      <p className="text-sm sm:text-base lg:text-lg text-[rgb(var(--theme-text))] leading-relaxed relative z-10">
+                        {t('aboutIntroduction')}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Contenido dividido en tres columnas - Usa todo el ancho del container */}
+            <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-12 scroll-reveal">
+              <div className="space-y-6">
+                <div className="space-y-4">
+                  <h3 className="text-xl font-bold text-[rgb(var(--theme-fg))] flex items-center">
+                    <Award className="h-5 w-5 text-[#003366] mr-3" />
+                    {t('legacyAndMentorshipTitle')}
+                  </h3>
+                  <p className="text-base lg:text-lg text-[rgb(var(--theme-text))] leading-relaxed">
+                    {t('legacyAndMentorshipDesc')}
+                  </p>
+                  <p className="text-base lg:text-lg text-[rgb(var(--theme-text))] leading-relaxed">
+                    {t('legacyAndMentorshipDesc2')}
+                  </p>
                 </div>
               </div>
 
-              <div className="relative scroll-reveal-right">
-                <div className="relative corporate-card rounded-2xl p-8 shadow-2xl card-hover">
-                  <div className="text-center mb-8">
-                    <div className="w-32 h-32 bg-gradient-to-br from-[#003366]/20 to-[#003366]/30 rounded-full mx-auto mb-6 flex items-center justify-center border-2 border-[#003366]/30">
-                      <Briefcase className="h-16 w-16 text-[#003366]" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-[rgb(var(--theme-fg))]">Maria Kuris</h3>
-                    <p className="text-[#003366] font-medium">{t('lawyer')}</p>
-                  </div>
+              <div className="space-y-6">
+                <div className="space-y-4">
+                  <h3 className="text-xl font-bold text-[rgb(var(--theme-fg))] flex items-center">
+                    <BookOpen className="h-5 w-5 text-[#003366] mr-3" />
+                    {t('expertiseTitle')}
+                  </h3>
+                  <p className="text-base lg:text-lg text-[rgb(var(--theme-text))] leading-relaxed">
+                    {t('expertiseDesc')}
+                  </p>
+                  <p className="text-base lg:text-lg text-[rgb(var(--theme-text))] leading-relaxed">
+                    {t('expertiseDesc2')}
+                  </p>
+                </div>
+              </div>
 
-                  <Separator className="my-8 bg-[#003366]/30" />
-
-                  <div className="space-y-6">
-                    <div>
-                      <h4 className="font-semibold text-[rgb(var(--theme-fg))] mb-3 flex items-center space-x-2">
-                        <BookOpen className="h-4 w-4 text-[#003366]" />
-                        <span>{t('formacion')}</span>
-                      </h4>
-                      <ul className="space-y-2 text-sm text-[rgb(var(--theme-text))] ml-6">
-                        <li>• Abogada - Universidad de Buenos Aires</li>
-                        <li>• LLM Corporate Law - Universidad Austral</li>
-                        <li>• Especialización en M&A - IAE Business School</li>
-                      </ul>
-                    </div>
-
-                    <div>
-                      <h4 className="font-semibold text-[rgb(var(--theme-fg))] mb-3 flex items-center space-x-2">
-                        <Award className="h-4 w-4 text-[#003366]" />
-                        <span>{t('membresias')}</span>
-                      </h4>
-                      <ul className="space-y-2 text-sm text-[rgb(var(--theme-text))] ml-6">
-                        <li>• Colegio de Abogados de la Ciudad</li>
-                        <li>• International Bar Association (IBA)</li>
-                        <li>• Cámara de Comercio Argentino-Americana</li>
-                      </ul>
-                    </div>
-                  </div>
+              <div className="space-y-6 md:col-span-2 xl:col-span-1">
+                <div className="space-y-4">
+                  <h3 className="text-xl font-bold text-[rgb(var(--theme-fg))] flex items-center">
+                    <Scale className="h-5 w-5 text-[#003366] mr-3" />
+                    {t('strategicVisionTitle')}
+                  </h3>
+                  <p className="text-base lg:text-lg text-[rgb(var(--theme-text))] leading-relaxed">
+                    {t('strategicVisionDesc')}
+                  </p>
+                  <p className="text-base lg:text-lg text-[rgb(var(--theme-text))] leading-relaxed">
+                    {t('strategicVisionDesc2')}
+                  </p>
                 </div>
               </div>
             </div>

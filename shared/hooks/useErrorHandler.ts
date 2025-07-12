@@ -38,18 +38,27 @@ export function useErrorHandler(config: UseErrorHandlerConfig = {}): UseErrorHan
     error: Error | AppError,
     context?: Record<string, unknown>
   ) => {
-    const appError = error instanceof AppError
-      ? error
-      : new AppError(
-          error.message || 'Error desconocido',
-          'HANDLED_ERROR',
-          undefined,
-          { originalError: error.name, ...context }
+    let appError: AppError;
+    
+    if (error instanceof AppError) {
+      // Si es AppError y hay contexto adicional, crear nuevo AppError
+      if (context && error.context) {
+        appError = new AppError(
+          error.message,
+          error.code,
+          error.statusCode,
+          { ...error.context, ...context }
         );
-
-    // Agregar contexto adicional si existe
-    if (context && appError.context) {
-      appError.context = { ...appError.context, ...context };
+      } else {
+        appError = error;
+      }
+    } else {
+      appError = new AppError(
+        error.message || 'Error desconocido',
+        'HANDLED_ERROR',
+        undefined,
+        { originalError: error.name, ...context }
+      );
     }
 
     setError(appError);

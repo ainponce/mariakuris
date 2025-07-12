@@ -25,6 +25,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { LanguageToggle } from "@/components/LanguageToggle"
 import { ThemeToggle } from "@/components/ThemeToggle"
 import { PageTransition } from "@/components/PageTransition"
+import { ContactForm } from "@/components/ContactForm"
 import { useLanguage } from "@/contexts/LanguageContext"
 import { useScrollAnimations, useParallax, useStaggeredAnimations } from "@/hooks/use-scroll-animations"
 
@@ -491,99 +492,7 @@ export default function Home() {
               </div>
 
               <div className="scroll-reveal-right">
-                <Card className="corporate-card shadow-2xl card-hover">
-                  <CardHeader>
-                    <CardTitle className="text-[rgb(var(--theme-fg))] text-2xl">{t('consultaCorpTitle')}</CardTitle>
-                    <CardDescription className="text-[rgb(var(--theme-text))]">
-                      {t('contactDescription')}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="space-y-6">
-                    <div className="grid sm:grid-cols-2 gap-4">
-                      <div className="space-y-2">
-                        <Label htmlFor="nombre" className="text-[rgb(var(--theme-fg))]">
-                          {t('nombre')}
-                        </Label>
-                        <Input
-                          id="nombre"
-                          placeholder={t('nombre')}
-                          className="bg-[rgb(var(--theme-card-bg))] border-[#003366]/30 text-[rgb(var(--theme-fg))] placeholder-[rgb(var(--theme-text))] focus:border-[#003366] focus:ring-[#003366]/20"
-                        />
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="apellido" className="text-[rgb(var(--theme-fg))]">
-                          {t('apellido')}
-                        </Label>
-                        <Input
-                          id="apellido"
-                          placeholder={t('apellido')}
-                          className="bg-[rgb(var(--theme-card-bg))] border-[#003366]/30 text-[rgb(var(--theme-fg))] placeholder-[rgb(var(--theme-text))] focus:border-[#003366] focus:ring-[#003366]/20"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="empresa" className="text-[rgb(var(--theme-fg))]">
-                        {t('empresa')}
-                      </Label>
-                      <Input
-                        id="empresa"
-                        placeholder={t('empresa')}
-                        className="bg-[rgb(var(--theme-card-bg))] border-[#003366]/30 text-[rgb(var(--theme-fg))] placeholder-[rgb(var(--theme-text))] focus:border-[#003366] focus:ring-[#003366]/20"
-                      />
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="email" className="text-[rgb(var(--theme-fg))]">
-                        {t('email')}
-                      </Label>
-                      <Input
-                        id="email"
-                        type="email"
-                        placeholder={t('email')}
-                        className="bg-[rgb(var(--theme-card-bg))] border-[#003366]/30 text-[rgb(var(--theme-fg))] placeholder-[rgb(var(--theme-text))] focus:border-[#003366] focus:ring-[#003366]/20"
-                      />
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="telefono" className="text-[rgb(var(--theme-fg))]">
-                        {t('telefono')}
-                      </Label>
-                      <Input
-                        id="telefono"
-                        placeholder="+54 11 1234-5678"
-                        className="bg-[rgb(var(--theme-card-bg))] border-[#003366]/30 text-[rgb(var(--theme-fg))] placeholder-[rgb(var(--theme-text))] focus:border-[#003366] focus:ring-[#003366]/20"
-                      />
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="asunto" className="text-[rgb(var(--theme-fg))]">
-                        {t('areaConsulta')}
-                      </Label>
-                      <Input
-                        id="asunto"
-                        placeholder="Ej: M&A, Derecho Societario, Contratos, etc."
-                        className="bg-[rgb(var(--theme-card-bg))] border-[#003366]/30 text-[rgb(var(--theme-fg))] placeholder-[rgb(var(--theme-text))] focus:border-[#003366] focus:ring-[#003366]/20"
-                      />
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="mensaje" className="text-[rgb(var(--theme-fg))]">
-                        {t('descripcionCaso')}
-                      </Label>
-                      <Textarea
-                        id="mensaje"
-                        placeholder={t('descripcionCaso')}
-                        rows={4}
-                        className="bg-[rgb(var(--theme-card-bg))] border-[#003366]/30 text-[rgb(var(--theme-fg))] placeholder-[rgb(var(--theme-text))] focus:border-[#003366] focus:ring-[#003366]/20"
-                      />
-                    </div>
-
-                    <Button className="w-full bg-[#003366] hover:bg-[#003366]/80 text-white font-semibold shadow-xl hover:shadow-[#003366]/25 btn-corporate">
-                      {t('enviarConsulta')}
-                    </Button>
-                  </CardContent>
-                </Card>
+                <ContactForm />
               </div>
             </div>
           </div>

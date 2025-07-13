@@ -1,7 +1,6 @@
 "use client"
 
 import {
-  ArrowRight,
   Award,
   BookOpen,
   Building2,
@@ -22,12 +21,12 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Separator } from "@/components/ui/separator"
 import { Textarea } from "@/components/ui/textarea"
-import { LanguageToggle } from "@/components/LanguageToggle"
-import { ThemeToggle } from "@/components/ThemeToggle"
 import { PageTransition } from "@/components/PageTransition"
 import { ContactForm } from "@/components/ContactForm"
 import { useLanguage } from "@/contexts/LanguageContext"
 import { useScrollAnimations, useParallax, useStaggeredAnimations } from "@/hooks/use-scroll-animations"
+import Header from "@/shared/components/Header"
+import HeroSection from "@/features/hero/HeroSection"
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0)
@@ -104,128 +103,10 @@ export default function Home() {
       <PageTransition />
       <div className="flex flex-col min-h-screen bg-[rgb(var(--theme-bg))]">
         {/* Header */}
-        <header className="border-b border-[#003366]/30 bg-[rgb(var(--theme-header-bg))]/95 backdrop-blur-sm sticky top-0 z-50 transition-all duration-300 scroll-reveal-down shadow-sm"
-          style={{
-            transform: `translateY(${Math.min(scrollY * 0.1, 10)}px)`,
-            boxShadow: scrollY > 50 ? '0 4px 20px rgba(0, 51, 102, 0.1)' : 'none'
-          }}>
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between items-center py-4">
-              <div className="flex items-center space-x-3">
-                <div className="relative">
-                  <Scale className="h-10 w-10 text-[#003366]" />
-                  <div className="absolute inset-0 bg-[#003366]/20 rounded-full blur-xl"></div>
-                </div>
-                <div>
-                  <h1 className="text-xl font-bold text-[rgb(var(--theme-fg))]">Maria Kuris</h1>
-                  <p className="text-sm text-[#003366]">{t('lawyer')}</p>
-                </div>
-              </div>
-
-              <nav className="hidden md:flex space-x-8">
-                <Link
-                  href="#inicio"
-                  className="text-[rgb(var(--theme-text))] hover:text-[#003366] transition-colors duration-300 relative group"
-                >
-                  {t('inicio')}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#003366] transition-all duration-300 group-hover:w-full"></span>
-                </Link>
-                <Link
-                  href="#servicios"
-                  className="text-[rgb(var(--theme-text))] hover:text-[#003366] transition-colors duration-300 relative group"
-                >
-                  {t('servicios')}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#003366] transition-all duration-300 group-hover:w-full"></span>
-                </Link>
-                <Link
-                  href="#sobre-mi"
-                  className="text-[rgb(var(--theme-text))] hover:text-[#003366] transition-colors duration-300 relative group"
-                >
-                  {t('sobreMi')}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#003366] transition-all duration-300 group-hover:w-full"></span>
-                </Link>
-                <Link
-                  href="#contacto"
-                  className="text-[rgb(var(--theme-text))] hover:text-[#003366] transition-colors duration-300 relative group"
-                >
-                  {t('contacto')}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#003366] transition-all duration-300 group-hover:w-full"></span>
-                </Link>
-              </nav>
-
-              <div className="flex items-center space-x-3">
-                <ThemeToggle />
-                <LanguageToggle />
-              </div>
-            </div>
-          </div>
-        </header>
+        <Header scrollY={scrollY} />
 
         {/* Hero Section */}
-        <section
-          id="inicio"
-          className="relative min-h-screen bg-gradient-to-br from-[rgb(var(--theme-gradient-from))] via-[rgb(var(--theme-gradient-to))] to-[#003366]/20 overflow-hidden"
-        >
-          {/* Video Background */}
-          <div className="absolute inset-0 z-0">
-            <video
-              className="w-full h-full object-cover"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-            >
-              <source src="https://3yfctedxuyowr5e7.public.blob.vercel-storage.com/background-hero-section-new-e1Frf8Qf9ag4wq7LdAVJSUwVfSBNGC.webm" type="video/webm" />
-              {t('videoNotSupported')}
-            </video>
-            {/* Video Overlay for text readability */}
-            <div className="absolute inset-0 bg-[rgb(var(--theme-video-overlay))]/[var(--theme-video-opacity)]"></div>
-          </div>
-
-          {/* Background Pattern with Parallax */}
-          <div className="absolute inset-0 opacity-10 parallax z-10" data-speed="0.2">
-            <div
-              className="absolute inset-0"
-              style={{
-                backgroundImage: `radial-gradient(circle at 25% 25%, #003366 0%, transparent 50%), 
-                             radial-gradient(circle at 75% 75%, #003366 0%, transparent 50%)`,
-              }}
-            ></div>
-          </div>
-
-          {/* Floating Background Elements */}
-          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-[#003366]/5 rounded-full blur-3xl parallax z-10" data-speed="0.3"></div>
-          <div className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-[#003366]/3 rounded-full blur-3xl parallax z-10" data-speed="0.4"></div>
-
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
-            <div className="flex flex-col items-center justify-center min-h-screen py-20 text-center">
-              {/* Main Content */}
-              <div className="space-y-8 scroll-reveal max-w-4xl mx-auto">
-                <div className="space-y-6">
-                  <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-[rgb(var(--theme-fg))] leading-tight scroll-reveal stagger-2">
-                    {t('asesoriaLegal')}
-                    <span className="block text-gradient">{t('corporativa')}</span>
-                  </h1>
-
-                  <p className="text-xl sm:text-2xl text-[rgb(var(--theme-text))] leading-relaxed max-w-2xl scroll-reveal stagger-3">
-                    {t('heroDescription')}
-                  </p>
-                </div>
-
-                <div className="flex justify-center scroll-reveal stagger-4">
-                  <Button
-                    size="lg"
-                    className="bg-[#003366] hover:bg-[#003366]/80 text-[#FFFFFF] font-semibold shadow-xl hover:shadow-[#003366]/25 btn-corporate group"
-                  >
-                    {t('consultaCorporativa')}
-                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <HeroSection />
 
         {/* Services Section */}
         <section
@@ -236,7 +117,7 @@ export default function Home() {
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#003366]/5 rounded-full blur-3xl"></div>
           <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#003366]/5 rounded-full blur-3xl"></div>
 
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center mb-16 lg:mb-24 scroll-reveal">
               <div className="inline-flex items-center space-x-2 bg-[#003366]/10 border border-[#003366]/20 rounded-full px-4 py-2 mb-6 scroll-reveal-scale stagger-1">
                 <Briefcase className="h-4 w-4 text-[#003366]" />
@@ -260,7 +141,6 @@ export default function Home() {
                   <CardHeader className="pb-4">
                     <div className="relative mb-4">
                       <service.icon className="h-12 w-12 text-[#003366] group-hover:scale-110 transition-transform duration-300" />
-                      <div className="absolute inset-0 bg-[#003366]/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </div>
                     <CardTitle className="text-[rgb(var(--theme-fg))] text-xl group-hover:text-[#003366] transition-colors duration-300">
                       {t(service.titleKey)}
@@ -292,7 +172,7 @@ export default function Home() {
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#003366]/5 rounded-full blur-3xl"></div>
           <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#003366]/5 rounded-full blur-3xl"></div>
 
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
             {/* Header */}
             <div className="text-center mb-16 scroll-reveal max-w-6xl mx-auto">
               <div className="inline-flex items-center space-x-2 bg-[#003366]/10 border border-[#003366]/20 rounded-full px-4 py-2 mb-6">
@@ -418,7 +298,7 @@ export default function Home() {
             ></div>
           </div>
 
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center mb-16 lg:mb-24 scroll-reveal">
               <div className="inline-flex items-center space-x-2 bg-[#003366]/10 border border-[#003366]/20 rounded-full px-4 py-2 mb-6 scroll-reveal-scale stagger-1">
                 <Mail className="h-4 w-4 text-[#003366]" />
@@ -500,13 +380,12 @@ export default function Home() {
 
         {/* Footer */}
         <footer className="bg-[rgb(var(--theme-gradient-to))] border-t border-[#003366]/30 py-16">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="w-full px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
               <div>
                 <div className="flex items-center space-x-3 mb-6">
                   <div className="relative">
                     <Scale className="h-10 w-10 text-[#003366]" />
-                    <div className="absolute inset-0 bg-[#003366]/20 rounded-full blur-xl"></div>
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-[rgb(var(--theme-fg))]">Maria Kuris</h3>

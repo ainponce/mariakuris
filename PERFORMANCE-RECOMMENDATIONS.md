@@ -1,6 +1,6 @@
 # 🚀 Recomendaciones de Rendimiento - María Kuris Portfolio
 
-## 📊 Estado Actual (Lighthouse)
+## 📊 Estado Actual del Performance
 - **FCP**: 0.9s (Excelente) 
 - **LCP**: 1.9s (Muy Bueno)
 - **Speed Index**: 2.6s (Bueno)
@@ -119,23 +119,7 @@ export const useDeviceDetection = () => {
 
 ## 🔧 Tools para Monitoreo Continuo
 
-### **1. Lighthouse CI**
-```yaml
-# .github/workflows/lighthouse.yml
-name: Lighthouse CI
-on: [push]
-jobs:
-  lighthouse:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Run Lighthouse CI
-        run: |
-          npm install -g @lhci/cli@0.12.x
-          lhci autorun
-```
-
-### **2. Web Vitals Monitoring**
+### **1. Web Vitals Monitoring**
 ```typescript
 // app/layout.tsx - Añadir Web Vitals
 import { Analytics } from '@vercel/analytics/react';
@@ -154,27 +138,14 @@ export default function RootLayout({ children }) {
 }
 ```
 
-### **3. Performance Budget**
-```json
-// lighthouse-budget.json
-{
-  "resourceSizes": [
-    {
-      "resourceType": "script",
-      "budget": 200
-    },
-    {
-      "resourceType": "image",
-      "budget": 500
-    }
-  ],
-  "resourceCounts": [
-    {
-      "resourceType": "third-party",
-      "budget": 10
-    }
-  ]
-}
+### **2. Bundle Analysis**
+```bash
+# Analizar el tamaño de bundles
+npm run analyze
+npm run bundle-analyzer
+
+# Verificar tamaños de archivos
+npm run check-size
 ```
 
 ## 🎯 Metas de Rendimiento
@@ -200,16 +171,16 @@ export default function RootLayout({ children }) {
 - [ ] Bundle analysis y optimization
 
 ### **Fase 3** (Seguimiento)
-- [ ] Lighthouse CI setup
-- [ ] Performance monitoring
+- [ ] Web Vitals monitoring setup
+- [ ] Performance monitoring dashboard
 - [ ] A/B testing de optimizaciones
 
 ## 📊 Monitoreo y Medición
 
 ```bash
 # Scripts útiles para development
-npm run analyze          # Analizar bundle
-npm run lighthouse      # Lighthouse local
-npm run perf           # Performance testing
-npm run build:analyze  # Build analysis
+npm run analyze         # Analizar bundle
+npm run bundle-analyzer # Análisis detallado de bundles
+npm run check-size     # Verificar tamaños de archivos
+npm run webp-convert   # Convertir imágenes a WebP
 ``` 

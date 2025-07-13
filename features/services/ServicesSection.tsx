@@ -10,7 +10,7 @@ import {
     Briefcase
 } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { useTranslation } from '@/contexts/OptimizedLanguageContext';
+import { useLanguage } from '@/contexts/LanguageContext';
 import { Service } from '@/shared/types/services.types';
 
 interface ServicesSectionProps {
@@ -24,7 +24,7 @@ const ServicesSection = memo(({
     maxItems,
     showCategories = true
 }: ServicesSectionProps) => {
-    const t = useTranslation();
+    const { t } = useLanguage();
 
     // Memoizar los datos de servicios
     const services: Service[] = useMemo(() => [
@@ -129,7 +129,7 @@ const ServicesSection = memo(({
                 aria-hidden="true"
             />
 
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
                 {/* Header */}
                 <div className="text-center mb-16 lg:mb-24" data-animate>
                     <div className="inline-flex items-center space-x-2 bg-[#003366]/10 border border-[#003366]/20 rounded-full px-4 py-2 mb-6">
@@ -168,7 +168,6 @@ const ServicesSection = memo(({
                             <CardHeader className="pb-4">
                                 <div className="relative mb-4">
                                     <service.icon className="h-12 w-12 text-[#003366] group-hover:scale-110 transition-transform duration-300" />
-                                    <div className="absolute inset-0 bg-[#003366]/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                                 </div>
 
                                 <CardTitle className="text-[rgb(var(--theme-fg))] text-xl group-hover:text-[#003366] transition-colors duration-300">

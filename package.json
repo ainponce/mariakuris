@@ -8,10 +8,6 @@
     "start": "next start",
     "lint": "next lint",
     "analyze": "cross-env ANALYZE=true next build",
-    "lighthouse": "lighthouse https://mariakuris.vercel.app/ --output=html --output-path=lighthouse-report.html --view",
-    "lighthouse:ci": "lhci autorun",
-    "perf": "npm run build && npm run lighthouse",
-    "build:analyze": "npm run analyze && npm run lighthouse",
     "bundle-analyzer": "npx @next/bundle-analyzer",
     "check-size": "bundlesize",
     "webp-convert": "node scripts/convert-images.js"

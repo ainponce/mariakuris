@@ -3,7 +3,7 @@
 import { memo, useMemo, useCallback } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useTranslation } from '@/contexts/OptimizedLanguageContext';
+import { useLanguage } from '@/contexts/LanguageContext';
 import { useSmoothScroll } from '@/shared/hooks/useOptimizedAnimations';
 
 interface HeroSectionProps {
@@ -12,12 +12,12 @@ interface HeroSectionProps {
 }
 
 const HeroSection = memo(({ className = '', onCTAClick }: HeroSectionProps) => {
-    const t = useTranslation();
+    const { t } = useLanguage();
     const smoothScroll = useSmoothScroll();
 
     // Memoizar el video source
     const videoSource = useMemo(() =>
-        "https://3yfctedxuyowr5e7.public.blob.vercel-storage.com/background-hero-section-new-e1Frf8Qf9ag4wq7LdAVJSUwVfSBNGC.webm",
+        "https://3yfctedxuyowr5e7.public.blob.vercel-storage.com/background-hero-section.mp4",
         []
     );
 
@@ -35,9 +35,8 @@ const HeroSection = memo(({ className = '', onCTAClick }: HeroSectionProps) => {
             id="inicio"
             className={`
         relative min-h-screen bg-gradient-to-br 
-        from-[rgb(var(--theme-gradient-from))] 
-        via-[rgb(var(--theme-gradient-to))] 
-        to-[#003366]/20 overflow-hidden ${className}
+        from-slate-900 via-slate-800 to-slate-900
+        overflow-hidden ${className}
       `}
         >
             {/* Video Background */}
@@ -54,69 +53,55 @@ const HeroSection = memo(({ className = '', onCTAClick }: HeroSectionProps) => {
                     <source src={videoSource} type="video/webm" />
                     {t('videoNotSupported')}
                 </video>
-                {/* Video Overlay for text readability */}
-                <div
-                    className="absolute inset-0 bg-[rgb(var(--theme-video-overlay))]/[var(--theme-video-opacity)]"
-                    aria-hidden="true"
-                />
+
+                {/* Overlay mejorado con gradiente más oscuro */}
+                <div className="absolute inset-0 bg-gradient-to-b from-slate-900/60 via-slate-900/50 to-slate-900/70" />
+
+                {/* Overlay adicional para mejor legibilidad */}
+                <div className="absolute inset-0 bg-gradient-to-r from-slate-900/40 via-slate-900/30 to-slate-900/40" />
             </div>
 
-            {/* Background Pattern with Parallax */}
-            <div
-                className="absolute inset-0 opacity-10 z-10"
-                data-parallax
-                data-parallax-speed="0.2"
-                aria-hidden="true"
-            >
-                <div
-                    className="absolute inset-0"
-                    style={{
-                        backgroundImage: `radial-gradient(circle at 25% 25%, #003366 0%, transparent 50%), 
-                         radial-gradient(circle at 75% 75%, #003366 0%, transparent 50%)`,
-                    }}
-                />
+            {/* Elementos decorativos mejorados */}
+            <div className="absolute inset-0 z-10">
+                {/* Elementos flotantes con mejor posicionamiento */}
+                <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-white/5 rounded-full blur-3xl animate-pulse" />
+                <div className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse delay-1000" />
+                <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-white/3 rounded-full blur-2xl animate-pulse delay-500" />
             </div>
 
-            {/* Floating Background Elements */}
-            <div
-                className="absolute top-1/4 left-1/4 w-64 h-64 bg-[#003366]/5 rounded-full blur-3xl z-10"
-                data-parallax
-                data-parallax-speed="0.3"
-                aria-hidden="true"
-            />
-            <div
-                className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-[#003366]/3 rounded-full blur-3xl z-10"
-                data-parallax
-                data-parallax-speed="0.4"
-                aria-hidden="true"
-            />
+            {/* Contenido principal */}
+            <div className="w-full px-4 sm:px-6 lg:px-8 relative z-20">
+                <div className="flex flex-col justify-center min-h-screen py-20">
+                    <div className="space-y-8 max-w-4xl" data-animate>
 
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
-                <div className="flex flex-col items-center justify-center min-h-screen py-20 text-center">
-                    {/* Main Content */}
-                    <div className="space-y-8 max-w-4xl mx-auto" data-animate>
+                        {/* Título principal simple */}
                         <div className="space-y-6">
-                            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-[rgb(var(--theme-fg))] leading-tight">
-                                {t('asesoriaLegal')}
-                                <span className="block bg-gradient-to-r from-[#003366] to-[#004488] bg-clip-text text-transparent">
-                                    {t('corporativa')}
-                                </span>
-                            </h1>
+                            <h2 className="text-lg sm:text-xl lg:text-2xl text-white font-medium leading-relaxed">
+                                Conozca más sobre nuestra trayectoria
+                            </h2>
 
-                            <p className="text-xl sm:text-2xl text-[rgb(var(--theme-text))] leading-relaxed max-w-2xl mx-auto">
-                                {t('heroDescription')}
-                            </p>
+                            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
+                                Experiencia en soluciones legales corporativas de excelencia
+                            </h1>
                         </div>
 
-                        <div className="flex justify-center">
+                        {/* Botón simple */}
+                        <div>
                             <Button
                                 size="lg"
-                                onClick={handleCTAClick}
-                                className="bg-[#003366] hover:bg-[#003366]/80 text-[#FFFFFF] font-semibold shadow-xl hover:shadow-[#003366]/25 transition-all duration-300 group"
-                                aria-label={`${t('consultaCorporativa')} - Contactar`}
+                                onClick={() => smoothScroll('sobre-mi')}
+                                className="
+                                    bg-transparent border-2 border-white 
+                                    hover:bg-white 
+                                    text-white hover:text-white/0
+                                    font-medium
+                                    px-8 py-3 text-base
+                                    transition-all duration-300
+                                    transform hover:scale-105 active:scale-95
+                                    rounded-none
+                                "
                             >
-                                {t('consultaCorporativa')}
-                                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+                                Ver más
                             </Button>
                         </div>
                     </div>

@@ -41,17 +41,30 @@ const HeroSection = memo(({ className = '', onCTAClick }: HeroSectionProps) => {
         >
             {/* Video Background */}
             <div className="absolute inset-0 z-0">
+                {/* Fallback background para dispositivos que no soportan video */}
+                <div
+                    className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
+                    style={{
+                        backgroundImage: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 1920 1080\'%3E%3Crect width=\'1920\' height=\'1080\' fill=\'%23334155\'/%3E%3C/svg%3E")'
+                    }}
+                />
+
                 <video
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover relative z-10"
                     autoPlay
                     muted
                     loop
                     playsInline
-                    preload="metadata"
+                    webkit-playsinline="true"
+                    preload="auto"
                     aria-hidden="true"
+                    controlsList="nodownload nofullscreen noremoteplayback"
+                    disablePictureInPicture
+                    poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 1080'%3E%3Crect width='1920' height='1080' fill='%23334155'/%3E%3C/svg%3E"
                 >
-                    <source src={videoSource} type="video/webm" />
-                    {t('videoNotSupported')}
+                    <source src={videoSource} type="video/mp4" />
+                    <source src="https://3yfctedxuyowr5e7.public.blob.vercel-storage.com/background-hero-section.webm" type="video/webm" />
+                    Su navegador no soporta el elemento video.
                 </video>
 
                 {/* Overlay mejorado con gradiente más oscuro */}

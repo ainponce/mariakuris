@@ -89,29 +89,29 @@ const HeroSection = memo(({ className = '', onCTAClick }: HeroSectionProps) => {
 
                         {/* Título principal simple */}
                         <div className="space-y-6">
-                            <h2 className="text-lg sm:text-xl lg:text-2xl text-white font-medium leading-relaxed">
+                            <h1 className="text-2xl sm:text-xl lg:text-2xl text-white leading-relaxed">
                                 Conozca más sobre nuestra trayectoria
-                            </h2>
-
-                            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
-                                Experiencia en soluciones legales corporativas de excelencia
                             </h1>
+
+                            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
+                                Experiencia en soluciones legales corporativas de excelencia
+                            </h2>
                         </div>
 
                         {/* Botón simple */}
                         <div>
                             <Button
                                 size="lg"
-                                onClick={() => smoothScroll('sobre-mi')}
+                                onClick={() => smoothScroll('contacto')}
                                 className="
-                                    bg-transparent border-2 border-white 
-                                    hover:bg-white 
-                                    text-white hover:text-white/0
+                                    bg-transparent border-2 border-white
+                                    rounded-full
+                                    hover:bg-transparent
+                                    text-white
                                     font-medium
                                     px-8 py-3 text-base
                                     transition-all duration-300
                                     transform hover:scale-105 active:scale-95
-                                    rounded-none
                                 "
                             >
                                 Ver más

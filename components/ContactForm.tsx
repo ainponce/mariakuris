@@ -43,13 +43,11 @@ export function ContactForm({ className }: ContactFormProps) {
         clearForm,
     } = useContactForm({
         onSuccess: (data, response) => {
-            console.log('✅ Formulario enviado exitosamente:', data);
             if (response.whatsappUrl) {
                 setShowWhatsAppOption(true);
             }
         },
         onError: (error) => {
-            console.error('❌ Error en el formulario:', error);
         },
     });
 

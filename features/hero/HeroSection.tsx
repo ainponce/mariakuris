@@ -17,7 +17,7 @@ const HeroSection = memo(({ className = '', onCTAClick }: HeroSectionProps) => {
 
     // Memoizar el video source
     const videoSource = useMemo(() =>
-        "https://3yfctedxuyowr5e7.public.blob.vercel-storage.com/background-hero-section.mp4",
+        "https://3yfctedxuyowr5e7.public.blob.vercel-storage.com/background-hero-section-new.mp4",
         []
     );
 
@@ -63,7 +63,7 @@ const HeroSection = memo(({ className = '', onCTAClick }: HeroSectionProps) => {
                     poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 1080'%3E%3Crect width='1920' height='1080' fill='%23334155'/%3E%3C/svg%3E"
                 >
                     <source src={videoSource} type="video/mp4" />
-                    <source src="https://3yfctedxuyowr5e7.public.blob.vercel-storage.com/background-hero-section.webm" type="video/webm" />
+                    <source src="https://3yfctedxuyowr5e7.public.blob.vercel-storage.com/background-hero-section-new.mp4" type="video/webm" />
                     Su navegador no soporta el elemento video.
                 </video>
 

@@ -77,7 +77,10 @@ export default function Hero() {
                 playsInline
                 loop={false}
               >
-                <source src="/video-placeholder.mp4" type="video/mp4" />
+                <source
+                  src="https://qwcqi0m5tmjnro6h.public.blob.vercel-storage.com/video-placeholder.mp4"
+                  type="video/mp4"
+                />
                 Tu navegador no soporta el elemento de video.
               </video>
 

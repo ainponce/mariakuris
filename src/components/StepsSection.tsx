@@ -56,7 +56,7 @@ export default function StepsSection() {
   };
 
   return (
-    <section className="w-full py-20 px-4 md:px-8">
+    <section className="w-full py-12 md:py-20 px-4 md:px-8">
       <div className="max-w-5xl mx-auto">
         {/* Section Header */}
         <motion.div
@@ -64,18 +64,18 @@ export default function StepsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-14"
+          className="text-center mb-8 md:mb-14"
         >
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-2 md:mb-3">
             Cómo funciona
           </h2>
-          <p className="text-gray-400">
+          <p className="text-gray-400 text-sm md:text-base">
             En una sola sesión obtenés claridad
           </p>
         </motion.div>
 
         {/* Steps Grid */}
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
           {steps.map((step, index) => (
             <motion.div
               key={index}
@@ -83,7 +83,7 @@ export default function StepsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.15 }}
-              className="relative bg-[#111111] rounded-2xl p-6 border border-[#1A1A1A] hover:border-[#2A2A2A] transition-colors"
+              className="relative bg-[#111111] rounded-xl md:rounded-2xl p-5 md:p-6 border border-[#1A1A1A] hover:border-[#2A2A2A] transition-colors"
             >
               {/* Step Number */}
               <span className="absolute top-4 right-4 text-xs font-mono text-gray-600">
@@ -91,15 +91,15 @@ export default function StepsSection() {
               </span>
 
               {/* Icon */}
-              <div className="w-14 h-14 rounded-xl bg-[#1A1A1A] flex items-center justify-center text-white mb-5">
+              <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-[#1A1A1A] flex items-center justify-center text-white mb-4 md:mb-5">
                 {renderIcon(step.icon)}
               </div>
 
               {/* Content */}
-              <h3 className="text-lg font-semibold text-white mb-2">
+              <h3 className="text-base md:text-lg font-semibold text-white mb-1 md:mb-2">
                 {step.title}
               </h3>
-              <p className="text-gray-400 text-sm leading-relaxed">
+              <p className="text-gray-400 text-xs md:text-sm leading-relaxed">
                 {step.description}
               </p>
             </motion.div>

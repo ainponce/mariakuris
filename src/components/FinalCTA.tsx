@@ -15,7 +15,7 @@ export default function FinalCTA({ onAgendarClick }: FinalCTAProps) {
   };
 
   return (
-    <section className="w-full py-20 px-4 md:px-8">
+    <section className="w-full py-12 md:py-20 px-4 md:px-8">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -23,17 +23,17 @@ export default function FinalCTA({ onAgendarClick }: FinalCTAProps) {
         transition={{ duration: 0.6 }}
         className="max-w-2xl mx-auto text-center"
       >
-        <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+        <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-3 md:mb-4">
           Da el primer paso
         </h2>
-        <p className="text-gray-400 mb-8">
+        <p className="text-gray-400 text-sm md:text-base mb-6 md:mb-8">
           Una conversación puede cambiar el rumbo de tu negocio.
         </p>
 
         <a
           href="#agenda"
           onClick={handleClick}
-          className="group relative inline-flex items-center pb-1 text-lg font-medium text-white"
+          className="group relative inline-flex items-center pb-1 text-base md:text-lg font-medium text-white"
         >
           Agendar consulta gratuita
           <svg
@@ -54,7 +54,7 @@ export default function FinalCTA({ onAgendarClick }: FinalCTAProps) {
           <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-white group-hover:w-full transition-all duration-500 ease-in-out group-hover:shadow-[0_0_10px_rgba(255,255,255,0.6)]" />
         </a>
 
-        <p className="mt-6 text-gray-500 text-sm">
+        <p className="mt-4 md:mt-6 text-gray-500 text-xs md:text-sm">
           Sin compromiso · Cupos limitados
         </p>
       </motion.div>

@@ -39,7 +39,7 @@ export default function TrustSection() {
   };
 
   return (
-    <section className="w-full py-16 bg-[#111111] border-y border-[#1A1A1A]">
+    <section className="w-full py-12 md:py-16 bg-[#111111] border-y border-[#1A1A1A]">
       <div className="max-w-4xl mx-auto px-4 md:px-8">
         {/* Stats */}
         <motion.div
@@ -47,9 +47,9 @@ export default function TrustSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-8 md:mb-12"
         >
-          <p className="text-gray-400 text-lg">
+          <p className="text-gray-400 text-base md:text-lg">
             <span className="text-white font-semibold">+50 casos</span> resueltos entre empresas y unipersonales
           </p>
         </motion.div>
@@ -60,7 +60,7 @@ export default function TrustSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex justify-center items-center gap-8 md:gap-16"
+          className="flex justify-center items-center gap-6 md:gap-16"
         >
           {categories.map((category, index) => (
             <motion.div
@@ -69,12 +69,12 @@ export default function TrustSection() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
-              className="flex flex-col items-center gap-3"
+              className="flex flex-col items-center gap-2 md:gap-3"
             >
-              <div className="w-12 h-12 rounded-full bg-[#1A1A1A] flex items-center justify-center text-gray-400">
+              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#1A1A1A] flex items-center justify-center text-gray-400">
                 {renderIcon(category.icon)}
               </div>
-              <span className="text-gray-500 text-sm">{category.label}</span>
+              <span className="text-gray-500 text-xs md:text-sm">{category.label}</span>
             </motion.div>
           ))}
         </motion.div>

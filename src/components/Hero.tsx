@@ -78,7 +78,7 @@ export default function Hero() {
                 loop={false}
               >
                 <source
-                  src="https://qwcqi0m5tmjnro6h.public.blob.vercel-storage.com/video-placeholder.mp4"
+                  src={process.env.NEXT_PUBLIC_VIDEO_URL || "https://qwcqi0m5tmjnro6h.public.blob.vercel-storage.com/video-placeholder.mp4"}
                   type="video/mp4"
                 />
                 Tu navegador no soporta el elemento de video.

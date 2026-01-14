@@ -42,3 +42,9 @@ next-env.d.ts
 
 # large video files
 public/video-placeholder.mp4
+
+# vercel logs
+.vercel/output/logs/*
+
+# scripts
+scripts/upload-video.ts

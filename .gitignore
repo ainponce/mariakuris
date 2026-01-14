@@ -48,3 +48,6 @@ public/video-placeholder.mp4
 
 # scripts
 scripts/upload-video.ts
+
+# claude settings
+.claude/

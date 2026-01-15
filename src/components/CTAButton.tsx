@@ -2,6 +2,23 @@
 
 import { motion } from "framer-motion";
 
+// Hoisted static SVG icon for better performance (rendering-hoist-jsx)
+const arrowSvg = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="20"
+    height="20"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M5 12h14M12 5l7 7-7 7" />
+  </svg>
+);
+
 interface CTAButtonProps {
   size?: "default" | "large";
   href?: string;
@@ -16,7 +33,7 @@ export default function CTAButton({ size = "default", href = "#agenda" }: CTABut
     <motion.a
       href={href}
       className={`
-        inline-flex items-center justify-center
+        group inline-flex items-center justify-center
         ${sizeClasses}
         bg-[#F5C518] text-black font-semibold
         rounded-full
@@ -28,22 +45,10 @@ export default function CTAButton({ size = "default", href = "#agenda" }: CTABut
       whileTap={{ scale: 0.98 }}
     >
       Agenda tu Consulta
-      <motion.svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="ml-2"
-        initial={{ x: 0 }}
-        whileHover={{ x: 4 }}
-      >
-        <path d="M5 12h14M12 5l7 7-7 7" />
-      </motion.svg>
+      {/* Animate wrapper div instead of SVG for hardware acceleration (rendering-animate-svg-wrapper) */}
+      <span className="ml-2 inline-block transition-transform duration-200 group-hover:translate-x-1">
+        {arrowSvg}
+      </span>
     </motion.a>
   );
 }

@@ -1,18 +1,20 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useCallback } from "react";
 
 interface NavbarProps {
   onAgendarClick?: () => void;
 }
 
 export default function Navbar({ onAgendarClick }: NavbarProps) {
-  const handleClick = (e: React.MouseEvent) => {
+  // Use useCallback with stable reference (rerender-functional-setstate)
+  const handleClick = useCallback((e: React.MouseEvent) => {
     if (onAgendarClick) {
       e.preventDefault();
       onAgendarClick();
     }
-  };
+  }, [onAgendarClick]);
 
   return (
     <>

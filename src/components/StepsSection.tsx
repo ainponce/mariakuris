@@ -2,58 +2,53 @@
 
 import { motion } from "framer-motion";
 
+// Hoisted static SVG icons for better performance (rendering-hoist-jsx)
+const earIcon = (
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M6 8.5a6.5 6.5 0 1 1 13 0c0 6-6 6-6 10a3.5 3.5 0 1 1-7 0" />
+    <path d="M15 8.5a2.5 2.5 0 0 0-5 0v1a2 2 0 1 1 0 4" />
+  </svg>
+);
+
+const searchIcon = (
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="11" cy="11" r="8" />
+    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+    <line x1="11" y1="8" x2="11" y2="14" />
+    <line x1="8" y1="11" x2="14" y2="11" />
+  </svg>
+);
+
+const clipboardIcon = (
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+    <rect x="8" y="2" width="8" height="4" rx="1" ry="1" />
+    <path d="M9 14l2 2 4-4" />
+  </svg>
+);
+
 const steps = [
   {
     number: "01",
     title: "Entendemos tu situación",
     description: "Analizamos tu contexto actual y objetivos específicos.",
-    icon: "ear",
+    icon: earIcon,
   },
   {
     number: "02",
     title: "Detectamos riesgos y prioridades",
     description: "Identificamos puntos críticos y oportunidades de mejora.",
-    icon: "search",
+    icon: searchIcon,
   },
   {
     number: "03",
     title: "Te llevás un plan",
     description: "Salís con pasos claros y accionables para avanzar.",
-    icon: "clipboard",
+    icon: clipboardIcon,
   },
 ];
 
 export default function StepsSection() {
-  const renderIcon = (icon: string) => {
-    switch (icon) {
-      case "ear":
-        return (
-          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M6 8.5a6.5 6.5 0 1 1 13 0c0 6-6 6-6 10a3.5 3.5 0 1 1-7 0" />
-            <path d="M15 8.5a2.5 2.5 0 0 0-5 0v1a2 2 0 1 1 0 4" />
-          </svg>
-        );
-      case "search":
-        return (
-          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-            <circle cx="11" cy="11" r="8" />
-            <line x1="21" y1="21" x2="16.65" y2="16.65" />
-            <line x1="11" y1="8" x2="11" y2="14" />
-            <line x1="8" y1="11" x2="14" y2="11" />
-          </svg>
-        );
-      case "clipboard":
-        return (
-          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
-            <rect x="8" y="2" width="8" height="4" rx="1" ry="1" />
-            <path d="M9 14l2 2 4-4" />
-          </svg>
-        );
-      default:
-        return null;
-    }
-  };
 
   return (
     <section className="w-full py-12 md:py-20 px-4 md:px-8">
@@ -92,7 +87,7 @@ export default function StepsSection() {
 
               {/* Icon */}
               <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-[#1A1A1A] flex items-center justify-center text-white mb-4 md:mb-5">
-                {renderIcon(step.icon)}
+                {step.icon}
               </div>
 
               {/* Content */}

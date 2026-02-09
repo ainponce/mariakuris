@@ -78,15 +78,15 @@ export default function StepsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.15 }}
-              className="relative bg-[#111111] rounded-xl md:rounded-2xl p-5 md:p-6 border border-[#1A1A1A] hover:border-[#2A2A2A] transition-colors"
+              className="group relative bg-[#111111] rounded-xl md:rounded-2xl p-5 md:p-6 border border-[#1A1A1A] hover:border-[var(--accent)]/20 transition-all duration-500 hover:shadow-[0_0_20px_rgba(247,226,156,0.05)]"
             >
               {/* Step Number */}
-              <span className="absolute top-4 right-4 text-xs font-mono text-gray-600">
+              <span className="absolute top-4 right-4 text-xs font-mono text-[var(--accent)]/40">
                 {step.number}
               </span>
 
               {/* Icon */}
-              <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-[#1A1A1A] flex items-center justify-center text-white mb-4 md:mb-5">
+              <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-gradient-to-br from-[#1A1A1A] to-[#111111] flex items-center justify-center text-white mb-4 md:mb-5 border border-[#222222]">
                 {step.icon}
               </div>
 

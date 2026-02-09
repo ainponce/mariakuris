@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import CalendlyBadge from "@/components/CalendlyBadge";
 import "./globals.css";
 
 const inter = Inter({
@@ -33,8 +34,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className="scroll-smooth">
+      <head>
+        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+      </head>
       <body className={`${inter.variable} font-sans antialiased`}>
         {children}
+        <CalendlyBadge />
       </body>
     </html>
   );
